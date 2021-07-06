@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;1,400;1,600&display=swap");
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url(img/Fundo.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+}
+
+.icones {
+  position: absolute;
+  margin-top: 20rem;
+  margin-left: 2.5rem;
+  display: grid;
+  gap: 60px;
+}
+
+.menu {
+  position: absolute;
+}
+.lara {
+  position: absolute;
+  margin-left: 20rem;
+  margin-top: 5rem;
+}
+.perfil {
+  position: absolute;
+  margin-top: 4rem;
+  display: flex;
+  gap: 2rem;
+  margin-left: 96rem;
+}
+
+.yoggo {
+  position: fixed;
+  left: 0.5%;
+  top: 2%;
+}
+.jogos {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin-top: 16rem;
+    margin-left: 13.5rem;
+    gap: 2rem;
+}
+
+.jogos img:hover {
+  border-radius: 20%;
+  
+  
+}
+.corpo-Lara{ 
+z-index: 100;
+position: absolute;    
+margin-left: 80rem;
+margin-top: -3rem;
+}
+.quadrado {
+  width: 1500px;
+  height: 350px;
+  background-color: #000;
+  position: relative;
+  margin-top: 30rem;
+  margin-left: 10rem; 
+  background: rgba(255, 255, 255, 0.41);
+  mix-blend-mode: normal;
+  border-radius: 50px;
+  
+}
+
+.quadrado p{
+  position: absolute;
+    margin: 0%;
+    color: white;
+    font-size: 20px;
+    margin-left: 2rem;
+    margin-top: -1rem;
+}
+
+.redes {
+  position: fixed;
+  display: flex;
+  top: 95%;
+
+}

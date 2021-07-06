@@ -1,0 +1,204 @@
+e*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(img/fundo\ nfs.jpeg);
+    padding: 100px 0;
+    background-image: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.retangulo img {
+    position: absolute;
+    margin: -8px;
+    width: 400px;
+    height: 1020px;
+    top: 1%;
+    
+}
+
+.razor {
+    position: absolute;
+    left: 67%;
+    top: 1.4%;
+}
+
+.alex {
+    position: absolute;
+    top: 4%;
+    left: 1%;
+
+}
+
+.retangulo2 {
+position: absolute;
+top: 5%;
+left: 1%;
+}
+
+.alexid {
+    position: absolute;
+    font-family: Verdana;
+    font-size: 40px;
+    color: white;
+    left: 7%;
+    top: 6%;
+}
+
+.perfil {
+    position: absolute;
+    left: 16%;
+    top: 20%;
+}
+
+.play {
+    position: absolute;
+    left: 16%;
+    top: 30%;
+}
+
+.config {
+    position: absolute;
+    left: 16%;
+    top: 40%;
+}
+
+.imagens {
+    position: absolute;
+    left: 16%;
+    top: 50%;
+}
+
+.barramenu {
+    position: absolute;
+    top: 40%;
+    color: white;
+    font-family: Verdana;
+    font-size: 40px;
+}
+
+.online {
+    position: absolute;
+    color: white;
+    font-family: Verdana;
+    font-size: 25px;
+    top: 47%;
+    left: 3%;
+}
+
+.ponto {
+    position: absolute;
+    color: lime;
+    font-family: Verdana;
+    font-size: 100px;
+    top: 32%;
+    left: 1%;
+}
+
+.alessandra {
+    position: absolute;
+    top: -30%;
+    left: 1%;
+}
+
+.retangulo3 {
+    position: absolute;
+    top: 55%;
+    left: 1%;
+}
+
+.nickalessandra {
+    position: absolute;
+    color: white;
+    font-family: Verdana;
+    font-size: 25px;
+    top: 30%;
+    left: 140%;
+}
+.retangulo4 {
+    position: absolute;
+    top: 120%;
+    left: 1%;
+}
+
+.gerald {
+    position: absolute;
+    top: -10%;
+}
+
+.nickgerald {
+    position: absolute;
+    color: white;
+    font-family: Verdana;
+    font-size: 25px;
+    top: 5%;
+    left: 105%;
+}
+
+.retangulo5 {
+    position: absolute;
+    top: 120%;
+    left: 1%;
+}
+
+.gustavo {
+    position: absolute;
+    top: -5%;
+    
+}
+
+.nickgustavo {
+    position: absolute;
+    color: white;
+    font-family: Verdana;
+    font-size: 25px;
+    top: 5%;
+    left: 105%;
+}
+
+.retangulo6 {
+    position: absolute;
+    top: 120%;
+    left: 1%;
+}
+
+.rafael {
+    position: absolute;
+    top: -15%;
+}
+
+.nickrafael {
+    position: absolute;
+    color: white;
+    font-family: Verdana;
+    font-size: 25px;
+    top: 5%;
+    left: 105%;
+}
+
+.perfil:hover {
+    background-color: lime;
+    cursor: pointer;
+    
+    
+}
+
+.play:hover {
+    background-color: lime;
+    cursor: pointer;
+    
+}
+
+.config:hover {
+    background-color: lime;
+    cursor: pointer;
+}
+
+.imagens:hover {
+    background-color: lime;
+    cursor: pointer;
+}

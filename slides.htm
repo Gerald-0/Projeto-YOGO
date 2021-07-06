@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides</title>
+
+    <!-- slides copiar -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/slides.css">
+    
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- copiar -->
+    
+</head>
+<body>
+    <!-- copiar apartir daqui -->
+    <div class="slides-center " id="slide-scroll">
+        <div class="slides center" id="slide-content">
+
+            <div class="slide-area">
+                <!-- caixa principal -->
+                <div class="slide-box">
+                    <!-- imagem de fundo -->
+                    <div class="slide-img">
+                        <img src="imgs/TR.jpg" alt="Tomb Raider IMG">
+                    </div>
+                    <!-- bordas -->
+                    <div class="slide-borders">
+                        <div class="top-bottom"></div>
+                        <div class="left-right"></div>
+                    </div>
+                    <!-- titulo -->
+                    <div class="slide-title">
+                        <span class="ft-1_2x">Rise of the</span>
+                        <br>
+                        <span class="ft-2x fw-700">Tomb Raider</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+var json_data = '{"games":[{"index":0,"title":"Rise of the Tomb Raider","title_sep":[{"v":"Rise of the","s":"1_25"},{"v":"Tomb Raider","s":"2"}],"image_icon":"TR.jpg","image_bg":"TR.jpg","description":"Lorem impsun"},{"index":1,"title":"Mortal Kombat","title_sep":[{"v":"Mortal Kombat","s":"2"}],"image_icon":"MK.jpg","image_bg":"MK.jpg","description":"Lorem impsun"},{"index":2,"title":"Super Mario","title_sep":[{"v":"Super Mario","s":"2"}],"image_icon":"MR.jpg","image_bg":"MR.jpg","description":"Lorem impsun"},{"index":3,"title":"Need for Speed World","title_sep":[{"v":"Need for Speed","s":"1_25"},{"v":"World","s":"2"}],"image_icon":"NFS.jpg","image_bg":"NFS.jpg","description":"Lorem impsun"},{"index":4,"title":"Donkey Kong","title_sep":[{"v":"Donkey Kong","s":"2"}],"image_icon":"DK.jpg","image_bg":"DK.jpg","description":"Lorem impsun"}]}';
+var img_url = './imgs/';
+
+var slide_element = "<div class=\"slide-area\" aria-label=\"%index%\" id=\"%id%\">"+// LI
+"<!-- caixa principal -->"+
+"<div class=\"slide-box\">"+// SLIDE-BOX
+"<!-- imagem de fundo -->"+
+"<div class=\"slide-img\">"+// SLIDE-IMG
+"<img src=\"%image1%\" alt=\"%title%\">"+
+"</div>"+// \SLIDE-IMG
+"<!-- bordas -->"+
+"<div class=\"slide-borders\">"+// SLIDE-BORDERS
+"<div class=\"top-bottom\"></div>"+
+"<div class=\"left-right\"></div>"+
+"</div>"+// \SLIDE-BORDERS
+"<!-- titulo -->"+
+"<div class=\"slide-title\">"+// SLIDE-TITLE
+"%title_sep%"+
+"</div>"+// \SLIDE-TITLE
+"</div>"+// \SLIDE-BOX
+"</div>";// \LI
+var title_sep_base = '<span class="ft-%sx">%v</span>';
+
+$(document).ready(function(){
+    var j = JSON.parse(json_data);
+    var ul = $("#slide-content");
+    ul.empty();
+    // console.log(j);
+
+    j["games"].forEach(game => {
+        var el = slide_element;
+        var title_sep = "";
+        var l = game['title_sep'].length;
+
+        for (let i = 0; i < l; i++) {
+            const t = game['title_sep'][i];
+            var _t = title_sep_base;
+            title_sep += _t.replace('%v',t['v']).replace('%s',t['s']);
+            
+            if (i<l)
+            {
+                title_sep+='<br>';
+            }
+        }
+
+        el = el.replace('%id%',"slide-index-"+game['index']);
+        el = el.replace('%index%',game['index']);
+        el = el.replace('%image1%',img_url+game['image_icon']);
+        el = el.replace('%title%',game['title']);
+        el = el.replace('%title_sep%',title_sep);
+        
+        ul.append(el);
+        // console.log(el);
+    });
+
+    ul.attr('aria-length',j['games'].length);
+    ul.attr('aria-selected',-1);
+});
+
+
+        </script>
+
+        <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+$(document).ready(function() {
+    $("#slide-content").slick({
+        dots: false,
+        infinite: true,
+        centerMode: true,
+        arrows: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        focusOnSelect: true,
+    });
+});
+      </script>
+    </div>
+    <!-- copiar até aqui -->
+</body>
+</html>

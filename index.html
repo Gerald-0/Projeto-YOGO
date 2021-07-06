@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css\font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- slides copiar -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/slides.css">
+    
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/detalhes.js"></script>
+    <!-- copiar -->
+</head>
+<body> 
+        <!-- <br> <br> <br> <br> <br> -->
+        <!-- <div class="container2">
+            <div class="corpo">
+            <img class="img-zoom img-fluid" src="img/DK.png">    
+            </div>
+        </div> -->
+             
+    
+ 
+    <!-- barras no topo e na parte de baixo -->
+    <div class="barras">
+        <div class="blur"></div>
+        <div class="blocopreto baixo"></div>
+        <div class="blocopreto topo"></div>
+    </div>
+
+    <!-- conteudo si site -->
+    <div class="content">
+        <div class="menu-topo">
+            <div class="logo">
+                <a href="#">
+                    <img src="img/YOGGO.png" alt="Logo">
+                </a>
+            </div>
+            <div class="menu-direita">
+                <ul>
+                    <li>
+                        <a href="pagina de incio/inicio.html" class="btn btn-primary"><i class="fa fa-user-circle"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-primary"><i class="fa fa-user-label"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-baixo">
+            <div class="menu-botoes">
+                <div class="menu-baixo-menu">
+                    <ul>
+                        <li><a href="#" class="btn btn-primary">Ação</a></li>
+                        <li><a href="#" class="btn btn-primary">Aventura</a></li>
+                        <li><a href="#" class="btn btn-primary">Estratégia</a></li>
+                        <li><a href="#" class="btn btn-primary">Esporte</a></li>
+                        <li><a href="#" class="btn btn-primary">Simulaçao</a></li>
+                        <li><a href="#" class="btn btn-primary">RPG</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slides">
+            <!-- copiar apartir daqui -->
+    <div class="slides-center " id="slide-scroll">
+        <div class="slides center" id="slide-content">
+
+            <div class="slide-area">
+                <!-- caixa principal -->
+                <div class="slide-box">
+                    <!-- imagem de fundo -->
+                    <div class="slide-img">
+                        <img src="imgs/TR.jpg" alt="Tomb Raider IMG">
+                    </div>
+                    <!-- bordas -->
+                    <div class="slide-borders">
+                        <div class="top-bottom"></div>
+                        <div class="left-right"></div>
+                    </div>
+                    <!-- titulo -->
+                    <div class="slide-title">
+                        <span class="ft-1_2x">Rise of the</span>
+                        <br>
+                        <span class="ft-2x fw-700">Tomb Raider</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+
+$(document).ready(function(){
+    var j = JSON.parse(json_data);
+    var ul = $("#slide-content");
+    ul.empty();
+    // console.log(j);
+
+    j["games"].forEach(game => {
+        var el = slide_element;
+        var title_sep = "";
+        var l = game['title_sep'].length;
+        var _link = game['link'];
+
+        for (let i = 0; i < l; i++) {
+            const t = game['title_sep'][i];
+            var _t = title_sep_base;
+            title_sep += _t.replace('%v',t['v']).replace('%s',t['s']);
+            
+            if (i<l)
+            {
+                title_sep+='<br>';
+            }
+        }
+
+        el = el.replace('%link%', _link);
+        el = el.replace('%id%',"slide-index-"+game['index']);
+        el = el.replace('%index%',game['index']);
+        el = el.replace('%index%',game['index']);
+        el = el.replace('%index%',game['index']);
+        el = el.replace('%image1%',img_url+game['image_icon']);
+        el = el.replace('%title%',game['title']);
+        el = el.replace('%title_sep%',title_sep);
+        
+        ul.append(el);
+        // console.log(el);
+    });
+
+    ul.attr('aria-length',j['games'].length);
+    ul.attr('aria-selected',-1);
+});
+
+
+        </script>
+
+        <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+$(document).ready(function() {
+    $("#slide-content").slick({
+        dots: false,
+        infinite: true,
+        centerMode: true,
+        arrows: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        focusOnSelect: true,
+    });
+    // $('.slide-area').click(function(){
+    //     // alert($(this).attr('aria-label'));
+    //     // $(this + ' .slide-link-click').click();
+    //     var id = $(this).attr('aria-label');
+    //     // alert($('#slide-link-' + id).attr('href'));
+    //     $('#slide-link-' + id).click();
+    // })
+});
+// window.onload = function() {
+//     list = document.querySelectorAll(".slick-slide");
+//     for (var i = 0; i < list.length; i++){
+//         list[i].addEventListener("click",function(e){
+//             e.preventDefault();
+//             var t = e.currentTarget;
+//             if (hasClass(t,'slick-current'))
+//             {
+//                 var target = e.currentTarget.children[0].children[0].children[0];
+//                 // alert(target); 
+//                 window.location = target;
+//                 // target.click();
+//             }
+//         });
+//     }
+// }
+function _click()
+{
+    var T = event.currentTarget.children[0];
+    var P = event.currentTarget.parentElement.parentElement;
+    if (hasClass(P,"slick-slide") && hasClass(P,"slick-current")){
+        window.location = T;
+    } 
+    // alert(T);
+}
+$(ducoment).ready(function(){
+    $('.slick-current').click(function(){
+        var t = $(this + ' div div a');
+        alert(t);
+    })
+})
+
+function hasClass(element, className)
+{
+    return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
+}
+      </script>
+    </div>
+    <!-- copiar até aqui 
+    FAÇAM O FAVOR DE FAZER A CAMPANH -->
+        </div>
+    </div>
+
+<div style="display: none;">
+
+  
+    </div>
+</body>
+
+</html>
