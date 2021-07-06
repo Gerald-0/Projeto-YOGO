@@ -1,0 +1,21 @@
+{
+    "games": [
+      {
+        "index": 0,
+        "title": "Rise of the Tomb Raider",
+        "title_sep": [
+          {
+            "v": "Rise of the",
+            "s": "1_25"
+          },
+          {
+            "v": "Tomb Raider",
+            "s": "2"
+          }
+        ],
+        "image_icon":"TR.jpg",
+        "image_bg":"TR.jpg",
+        "description":"Lorem impsun"
+      }
+    ]
+  }
